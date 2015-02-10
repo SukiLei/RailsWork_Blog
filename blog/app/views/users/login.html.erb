@@ -1,0 +1,21 @@
+<h1>User#Login</h1>
+<p>Find me in app/views/user/login.html.erb</p>
+<p>
+<%= @hint %>
+</p>
+<%= form_for :user, :url => {:action => 'login'} do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Login' %>
+  </p>
+<% end %>
+<%= link_to 'Back', users_path %>
