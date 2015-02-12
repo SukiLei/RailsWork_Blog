@@ -1,7 +1,9 @@
-<h1>Articles#New</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
 
-<h2>Hello, it's New.</h2>
+<%= "new.html" %>
 
 <%= form_for :article, url: articles_path do |f| %>
   <% if @article.errors.any? %>
@@ -20,7 +22,7 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
- 
+
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>

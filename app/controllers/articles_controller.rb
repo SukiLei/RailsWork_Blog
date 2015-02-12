@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  
 	before_filter :verify_access, except: [:index]
 	def verify_access
     puts "=====================\nverify_access:#{session[:current_user].class}\n====================="
@@ -24,9 +23,11 @@ class ArticlesController < ApplicationController
       #username = User.find_by_name(session[:current_user]["name"])
     end
 	end
+
 	def new
 		@article = Article.new
 	end
+
 	def create
 		#render plain: params[:article].inspect
 		@article = Article.new(article_params)
@@ -44,7 +45,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
- 
+
 	    if @article.update(article_params)
 		    redirect_to @article
   	    else
@@ -59,8 +60,8 @@ class ArticlesController < ApplicationController
 	def destroy
 	  @article = Article.find(params[:id])
  	  @article.destroy
- 
-  	  redirect_to articles_path	
+
+  	  redirect_to articles_path
 	end
 
 	def index
@@ -71,5 +72,4 @@ class ArticlesController < ApplicationController
 	def article_params
 		params.require(:article).permit(:title, :text, :picture)
 	end
-
 end

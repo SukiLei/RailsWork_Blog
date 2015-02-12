@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 =begin
-	USER_NAME, PASSWORD = "dhh", "secret"  
+	USER_NAME, PASSWORD = "dhh", "secret"
 	#http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :login]
 =end
   before_filter :verify_login, except: [:login]
@@ -27,27 +27,28 @@ class UsersController < ApplicationController
 		@h = '0.0'
 
 		if @user.save
-			redirect_to @user
 			@h = "Regedit OK"
+			redirect_to @user
 		else
-			render 'new'
 			@h = "Regedit failed"
+			render 'new'
 		end
 	end
+  
 	def login
  		unless request.get?
        	 	@hint = "ok"
         	@user = User.find_by_name(params[:user][:name])
         	if @user.class == NilClass
-          		@hint = 'Unregisted Username.'
+          		@hint = 'Login faild. Unregisted Username.'
         	elsif @user.password == params[:user][:password]
           		@hint = "Welcome back, "
               session[:current_user] = @user
           		redirect_to :controller => 'users', :action => 'index'
         	else
           	@hint = "Login failed, please check up you info"
-        	end        
-    	end	
+        	end
+    	end
 	end
 
   def logout
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
   end
 
 	def show
+    @hint_show = @h
 		@users = User.find(params[:id])
 	end
 	def index

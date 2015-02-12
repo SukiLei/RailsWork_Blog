@@ -1,20 +1,23 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
 
-<h2>Hello, it's show.</h2>
+<%= "show.html" %>
+
 
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
- 
+
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
 <p>
   <strong>Picture:</strong>
-  <%= @article.picture %>
+  <%= image_tag @article.picture %>
 </p>
 
 <h2>Comments</h2>
@@ -23,7 +26,7 @@
     <strong>Commenter:</strong>
     <%= comment.commenter %>
   </p>
- 
+
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>

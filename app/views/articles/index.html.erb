@@ -1,7 +1,10 @@
-<h1>Articles#Index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
 
-<h3>Hello, it's index.</h3>
+<%= "index.html" %>
+
 <p>
 <%= @hint %>
 </p>
@@ -15,12 +18,12 @@
     <th>Picture</th>
     <th colspan="4"></th>
   </tr>
- 
+
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= article.text %></td> 
-      <td><%= article.picture %></td>   
+      <td><%= article.text %></td>
+      <td><%= image_tag article.picture %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article),

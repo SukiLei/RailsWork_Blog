@@ -3,9 +3,11 @@
 one:
   commenter: MyString
   body: MyText
-  support: MyString
+  article_id: 
+  user: 
 
 two:
   commenter: MyString
   body: MyText
-  support: MyString
+  article_id: 
+  user: 
