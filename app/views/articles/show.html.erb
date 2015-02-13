@@ -22,7 +22,7 @@
   </p>
 </p>
 
-<%= button_to "Yes: #{@article.supports.count}" %>
+<%= button_to "Yes: #{@article.supports.count}", {:controller => "articles", :action => "add_support"} %>
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>

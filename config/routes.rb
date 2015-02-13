@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   Rails.application.routes.draw do
-    resources :users 
+    resources :users
     resources :articles do
       resources :comments
       resources :supports
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'login', :controller => 'users', :action => 'login'
   post 'login', :controller => 'users', :action => 'login'
   get 'logout', :controller => 'users', :action => 'logout'
+  #post "supports/add_support" => "articles#add_support"
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

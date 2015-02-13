@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   def logout
     session[:current_user] = nil
-    puts "=====================\n#{session[:current_user].class}\n====================="
+    #puts "=====================\n#{session[:current_user].class}\n====================="
     redirect_to :controller => 'welcome', :action => 'index'
   end
 
