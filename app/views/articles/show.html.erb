@@ -17,8 +17,12 @@
 </p>
 <p>
   <strong>Picture:</strong>
-  <%= image_tag @article.picture %>
+  <p>
+   <%= image_tag @article.picture %>
+  </p>
 </p>
+
+<%= button_to "Yes: #{@article.supports.count}" %>
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
@@ -31,12 +35,6 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-<!--
-  <p>
-    <strong>Up:</strong>
-    <%#= comment.support %>
-  </p>
--->
 <% end %>
 
 <h2>Add a comment:</h2>

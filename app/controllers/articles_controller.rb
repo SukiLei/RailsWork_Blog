@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
 	before_filter :verify_access, except: [:index]
 	def verify_access
-    puts "=====================\nverify_access:#{session[:current_user].class}\n====================="
     if session[:current_user].nil?
       @hint = "Verify access failed, log in first please."
       redirect_to :controller => 'users', :action => 'login'
@@ -19,7 +18,6 @@ class ArticlesController < ApplicationController
       end
 =end
     else
-      puts "=============\narticle:\n#{session[:current_user]["name"]}\n================"
       #username = User.find_by_name(session[:current_user]["name"])
     end
 	end

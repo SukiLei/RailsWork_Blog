@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users 
     resources :articles do
       resources :comments
+      resources :supports
     end
     root 'welcome#index'
   end
