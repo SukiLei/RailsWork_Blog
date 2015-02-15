@@ -1,13 +1,13 @@
 class SupportsController < ApplicationController
   def create
-    #@user = User.find(params[:user_id])
-    #@article = Article.find(params[:article_id])
-    @support = @article.supports.create(support_params)
+    #@user = User.find_by_name(session[:current_user]["name"])
+    @article = Article.find(params[:article_id])
+    @support = @article.supports.create
+    
     redirect_to article_path(@article)
   end
-  
-  private
-    def support_params
-      params.require(:support).permit(:user_id, :article_id)
-    end
+
+  def index
+    redirect_to article_path(@article)
+  end
 end

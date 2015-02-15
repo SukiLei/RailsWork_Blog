@@ -11,6 +11,12 @@
 <h2>Listing articles</h2>
  <%= link_to 'Back to Homepage', controller: 'welcome' %>
  <%= link_to 'New article', new_article_path %>
+<% if @login_stauts %>
+ <%= link_to 'Login', login_path %>
+ <%= link_to 'Register', new_user_path %>
+<% else %>
+  <%= link_to 'Logout', logout_path %>
+<% end %>
 <table>
   <tr>
     <th>Title</th>

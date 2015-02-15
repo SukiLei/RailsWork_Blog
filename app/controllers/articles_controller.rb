@@ -64,23 +64,8 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+    @login_stauts = session[:current_user].nil?
 	end
-
-  def add_support
-    @support = Support.new
-    @user = session[:current_user]
-    puts "============\n#{params[:id]}\n============"
-    @article = Article.find(params[:id])
-    puts "============\n#{@article.class}\n============"
-    @support = @article.supports.create(support_params)
-
-    if @support.save
-			redirect_to @article
-		else
-			render 'new'
-		end
-    redirect_to article_path(@article)
-  end
 
 	private
 	def article_params

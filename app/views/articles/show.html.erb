@@ -5,7 +5,6 @@
 
 <%= "show.html" %>
 
-
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -22,7 +21,8 @@
   </p>
 </p>
 
-<%= button_to "Yes: #{@article.supports.count}", {:controller => "articles", :action => "add_support"} %>
+<%#= button_to "Yes: #{@article.supports.count}", {:controller => "articles", :action => "add_support"} %>
+<%= button_to "Yes: #{@article.supports.count}", article_supports_path(@article, @user) %>
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
