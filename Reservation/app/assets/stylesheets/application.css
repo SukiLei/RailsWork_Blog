@@ -1,21 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+    Document   : application1
+    Created on : Feb 17, 2015, 10:31:12 AM
+    Author     : CLEI
+    Description:
+        Purpose of the stylesheet follows.
+*/
 
-
- @charset "utf-8";
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "utf-8";
 
 *[dir="rtl"] {
     direction: rtl;
@@ -78,6 +76,35 @@ Ratio:	 	http://en.wikipedia.org/wiki/Golden_ratio
 
 Reference:	http://modularscale.com
 
+-----------------------------------------------------------------------------------------------------------------------------
+Px				Whole Px		REM			   EM @ 16				Desktop >1280px		Desktop >768px		Mobile <768px
+=============================================================================================================================
+751.5380		-				-			   46.9710				-					-					-
+464.4860		-				-		 	   29.0300				-					-					-
+287.0740		-				-			   17.9420				-					-					-
+177.4250		-				-		   	   11.0890				-					-					-
+109.6570		-				-				6.8540				-					-					-
+ 68.0000 ...... 68 ............ 6.8 ........... 4.2500 ............ H1 ................ XX ................ XX
+ 67.7730		-				-				4.2360				-					-					-
+ 42.0000 ...... 42 ............ 4.2 ........... 2.6250 ............ H2 ................	H1 ................ XX
+ 41.8870		-				-				2.6180				-					-					-
++38.0000 ...... 38 ............ 3.8 ........... 2.3750 ............ XX ................	H2 ................ XX
+*34.0000 ...... 34 ............ 3.4 ........... 2.1250 ............ H3 ................ XX ................ H1
+ 26.0000 ...... 26 ............ 2.6 ........... 1.6250 ............ H4 ................	H3 ................ XX
+*23.0000 ...... 23 ............ 2.3 ........... 1.4375 ............ XX ................	XX ................ H2
+ 25.8880		-				-				1.6180				-					-					-
+ 20.0000 ...... 20 ............ 2.0 ........... 1.2500 ............ P, LI, LABEL, H5 ..	H4 ................ H3
+ 16.0000 ...... 16 ............ 1.6 ........... 1.0000 ............ XX ................	P, LI, LABEL ...... P, LI, LABEL, H4
+*13.0000 ...... 13 ............ 1.3 ........... 0.8125 ............ H6 ................	H5 ................ H5
+ 10.0000 ...... 10 ............ 1.0 ........... 0.6250 ............ XX ................	H6 ................ H6
+  9.889			-				-				0.6180				-					-					-
+  6.112			-				-				0.3820				-					-					-
+  3.778			-				-				0.2360				-					-					-
+  2.335			-				-				0.1460				-					-					-
+  1.443			-				-				0.0900				-					-					-
+=============================================================================================================================
+* = 1/2 Stop
++ = 1/4 Stop
 ------------------------------------------------------------------------------- */
 
 /* Vertical Spacing ---------------------------------------------------------- */
@@ -1177,7 +1204,7 @@ table.presentation .buttons {
     right: 0;
     height: 28px;
     width: 28px;
-    background: transparent url("/app/assets/images/logo.jpg") no-repeat -864px -34px;
+    background: transparent url("/Content/images/sprite2014.png") no-repeat -864px -34px;
 }
 /* END LEGACY */
 
@@ -1191,7 +1218,7 @@ table.presentation .buttons {
         height: 24px;
         width: 232px;
         margin: 20px 0;
-        background: transparent url("/app/assets/images/logo.jpg") no-repeat 0 -4px;
+        background: transparent url("/content/images/sprite2014.png") no-repeat 0 -4px;
     }
 
 
@@ -1410,6 +1437,39 @@ a.icon_twitter {
     a.icon_twitter:hover {
         background-position: -964px -704px;
     }
+/* http://jira.gallup.com/jira/browse/SF-2898 */
+#gdfooter .row2 .col.colpos20 {
+    width: calc(100% - 144px);
+}
+
+#gdfooter .row2 .col.colpos21 {
+    width: 144px;
+}
+
+/* General Nav Styles ----------------------------------------------------- */
+nav ul,
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li a,
+nav li span,
+.nav li a {
+    text-decoration: none;
+    display: block;
+}
+
+/*remove the main navigation bar from survey pages */
+.public.survey .gel-nav-main,
+.public.survey #navHolder {
+    display: none;
+}
+/* add small top padding to survey pages */
+.public.survey #gdcontent {
+    padding-top: 32px;
+}
 
 /* Site Content Styles ---------------------------------------------------- */
 #gdcontent > .inner {
@@ -1812,6 +1872,608 @@ p.iconCertEval > span {
     background: transparent url("/Content/images/sprite_v.png") no-repeat 0 -1024px;
 }
 
+/* CSFCourses Public Pages */
+.CSFCourses .gray-header-bar {
+    background-color: #f5f5f5;
+    border-top: 1px solid #d5d6d2;
+    background-image: url('/content/images/bg_pattern.png');
+}
+
+    .CSFCourses .gray-header-bar > .inner > .col > .inner {
+        padding: 2px 16px;
+    }
+
+.CSFCourses .green-header-bar {
+    background-color: #d6f1db;
+    width: 100%;
+    padding: 8px 0px;
+    font-size: 20px; /* IE Only */
+    font-size: 2.0rem;
+    line-height: 1.2000; /* (1 * 24) / 20 = 1.2 */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.CSFCourses .subhead {
+    font-size: 20px; /* IE Only */
+    font-size: 2.0rem;
+    line-height: 1.2000; /* (1 * 24) / 20 = 1.2 */
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin-top: 24px;
+    margin-top: 2.4rem;
+}
+
+.CSFCourses div.course-path-chart {
+        background-color: #e6e6e6;
+}
+
+    .CSFCourses div.course-path-chart span.header {
+        display: block;
+        background-color: #d3edd8;
+        padding: 4px;
+        font-weight: bold;
+    }
+
+    .CSFCourses div.course-path-chart p {
+        padding: 0 8px;
+    }
+
+.CSFCourses div.course-path-1 {
+    width: 50%;
+    float: left;
+}
+
+.CSFCourses div.course-path-2 {
+    width: 40%;
+    float: right;
+}
+
+.CSFCourses div.course-path-or {
+    padding: 10% 0;
+    width: 10%;
+    float: left;
+}
+
+ul.browse-courses > li > span {
+    font-weight: bold;
+}
+
+.course-table {
+    width: 100%;
+}
+
+    .course-table > thead > tr > th {
+        font-weight: bold;
+    }
+
+.course-table > tbody > tr > td {
+    padding: 16px 0;
+}
+
+.course-table tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+.course-bullets li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* CSF Codes Public */
+.CSFCodes .formPanel {
+    border-top: 1px solid #b5b6b3;
+    border-bottom: 1px solid #b5b6b3;
+}
+
+.CSFCodes .csf-purchase-grid {
+    padding-bottom: 32px;
+}
+
+.CSFCodes .csf-purchase-grid .gray-header {
+    background-color: #54585A;
+    display: block;
+    padding: 8px 0;
+}
+
+    .CSFCodes .csf-purchase-grid .gray-header h5 {
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+.CSFCodes .csf-purchase-grid p {
+    margin-top: 12px;
+    margin-top: 1.2rem;
+    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
+}
+
+.CSFCodes .csf-purchase-grid li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.CSFCodes .csf-purchase-grid .pricing {
+    text-align: center;
+    font-weight: normal;
+}
+
+.CSFCodes .csf-purchase-grid .pricing h1 {
+    font-weight: normal;
+}
+
+.CSFCodes .csf-purchase-grid .pricing .note {
+    font-weight: bold;
+}
+
+.CSFCodes .csf-purchase-grid .gray-arrow {
+    position: absolute;
+    left: -9999px;
+}
+
+.CSFCodes .csf-purchase-grid .buttons > .button.fullwidth > input {
+    width: 60%;
+    margin: 0 20%;
+}
+
+.element.col {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.content .col > .inner.plusIcon {
+    padding-right: 40px;
+    background-color: transparent;
+    background-image: url("/Content/images/sprite_v.png");
+    background-position: right -730px;
+    background-repeat: no-repeat;
+}
+
+.content .col > .inner.equalIcon {
+    padding-right: 40px;
+    background-color: transparent;
+    background-image: url("/Content/images/sprite_v.png");
+    background-position: right -796px;
+    background-repeat: no-repeat;
+}
+
+
+.equalIcon label span {
+    white-space: nowrap;
+}
+
+/* CSF Kits Public */
+.calcPanel .col h5 {
+    margin-top: 0;
+}
+
+/* ESF About */
+/* Legacy Page, for non-english */
+h5.icon > span {
+    display: block;
+    width: 124px;
+    height: 96px;
+    margin: 0 auto 16px;
+    background: transparent url("/Content/images/sprite2014.png") no-repeat 999px 999px;
+}
+
+
+h5.ESFedu > span {
+    background-position: 0 -916px;
+}
+
+h5.ESFinv > span {
+    background-position: -162px -916px;
+}
+
+h5.ESFcoaches span {
+    background-position: -324px -916px;
+}
+
+h5.ESFcity span {
+    background-position: -520px -916px;
+}
+
+/* ESF About Page - new page with books */
+
+.ESFabout #gdcontent {
+    padding-bottom: 0;
+}
+
+.responsiveVideo {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 57.25%; /* Adjust for aspect ratio based on player size */
+}
+
+.responsiveVideo > iframe,
+.responsiveVideo > embed,
+.responsiveVideo > object,
+.responsiveVideo > object embed,
+.no-reflow > img,
+.responsiveVideo > video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ESFabout .productDescription h3 {
+    margin-top: 0;
+}
+
+.en-us.ESFabout .row3 li,
+.ja-jp.ESFabout .row3 li,
+.ko-kr.ESFabout .row3 li {
+    margin: 12px 2em;
+}
+
+.ESFabout .figcaption p {
+    margin: 12px 0 0 0;
+}
+
+.ESFabout .figure a {
+    text-decoration: none;
+}
+
+.ESFabout .figure.userStory img,
+.ESFabout .responsiveVideo {
+     border: 8px solid #e6e6e6;
+ }
+
+    .ESFabout .figure.userStory:hover img {
+        border: 8px solid #d4d5d6;
+    }
+
+.en-us.ESFabout #gdcontent .row3 .buttons a img,
+.ja-jp.ESFabout #gdcontent .row3 .buttons a img,
+.ko-kr.ESFabout #gdcontent .row3 .buttons a img {
+    margin: 0 auto;,
+}
+
+.en-us.ESFabout #gdcontent .row4,
+.ja-jp.ESFabout #gdcontent .row4,
+.ko-kr.ESFabout #gdcontent .row4 {
+    border-top: 1px solid #d5d6d2;
+    text-align: center;
+}
+
+.en-us.ESFabout #gdcontent .row4 .button,
+.ja-jp.ESFabout #gdcontent .row4 .button,
+.ko-kr.ESFabout #gdcontent .row4 .button {
+    float: none;
+}
+
+.en-us.ESFabout .row4 .button a,
+.ja-jp.ESFabout .row4 .button a,
+.ko-kr.ESFabout .row4 .button a {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.en-us.ESFabout #gdcontent .row1 .colpos20,
+.ja-jp.ESFabout #gdcontent .row1 .colpos20,
+.ko-kr.ESFabout #gdcontent .row1 .colpos20 {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.en-us.ESFUserStory #gdcontent .row3,
+.en-us.ESFabout #gdcontent .row2,
+.en-us.ESFabout #gdcontent .row5,
+.ja-jp.ESFUserStory #gdcontent .row3,
+.ja-jp.ESFabout #gdcontent .row2,
+.ja-jp.ESFabout #gdcontent .row5,
+.ko-kr.ESFUserStory #gdcontent .row3,
+.ko-kr.ESFabout #gdcontent .row2,
+.ko-kr.ESFabout #gdcontent .row5   {
+    position: relative;
+    background: #54585a;
+    color: #fff;
+}
+
+
+.en-us.ESFUserStory #gdcontent .row3 h3,
+.en-us.ESFabout #gdcontent .row2 h3,
+.en-us.ESFabout #gdcontent .row5 h3,
+.ja-jp.ESFUserStory #gdcontent .row3 h3,
+.ja-jp.ESFabout #gdcontent .row2 h3,
+.ja-jp.ESFabout #gdcontent .row5 h3,
+.ko-kr.ESFUserStory #gdcontent .row3 h3,
+.ko-kr.ESFabout #gdcontent .row2 h3,
+.ko-kr.ESFabout #gdcontent .row5 h3 {
+    padding: 26px 0;
+    margin: 0;
+}
+
+.en-us.ESFUserStory #gdcontent .row3 .inner:before,
+.en-us.ESFabout #gdcontent .row2 .inner:before,
+.ja-jp.ESFUserStory #gdcontent .row3 .inner:before,
+.ja-jp.ESFabout #gdcontent .row2 .inner:before,
+.ko-kr.ESFUserStory #gdcontent .row3 .inner:before,
+.ko-kr.ESFabout #gdcontent .row2 .inner:before {
+    position: absolute;
+    content: " ";
+    left: calc(50% - 20px);
+    left: 47%;
+    width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #fff;
+}
+
+.en-us.ESFabout #gdcontent .row3 > .inner,
+.ja-jp.ESFabout #gdcontent .row3 > .inner,
+.ko-kr.ESFabout #gdcontent .row3 > .inner {
+    padding: 60px 0 30px 0;
+}
+
+.en-us.ESFabout #gdcontent .row3 > .inner  + .inner,
+.ja-jp.ESFabout #gdcontent .row3 > .inner  + .inner,
+.ko-kr.ESFabout #gdcontent .row3 > .inner  + .inner {
+    border-top: 1px solid #8e908f;
+}
+
+.en-us.ESFabout #gdcontent .row3 .col,
+.ja-jp.ESFabout #gdcontent .row3 .col,
+.ko-kr.ESFabout #gdcontent .row3 .col {
+    margin: 0 auto;
+}
+
+.en-us.ESFabout #gdcontent .row3 .col0,
+.ja-jp.ESFabout #gdcontent .row3 .col0,
+.ko-kr.ESFabout #gdcontent .row3 .col0 {
+    width: 100%;
+    max-width: 256px;
+}
+
+.ESFabout .figure.userStory img,
+.en-us.ESFabout #gdcontent .row3 .col0 img,
+.ja-jp.ESFabout #gdcontent .row3 .col0 img,
+.ko-kr.ESFabout #gdcontent .row3 .col0 img {
+    margin: 0 auto;
+}
+
+.ESFabout .figure.userStory {
+    width: calc(100% - 32px);
+    max-width: 264px;
+    margin: 16px auto;
+}
+
+.no-reflow {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.8333333%; /* = 341/600 */
+}
+
+.no-reflow > img {
+    position: absolute;
+    top: 0;
+
+}
+
+.ESFabout .booklistitem {
+    float: left;
+    width: calc(100% - 32px);
+    margin: 16px;
+}
+
+.ESFabout .booklistitem:nth-of-type(odd) {
+    clear: left;
+}
+
+.ESFabout .booklistitem img {
+    margin: 0 auto;
+}
+
+.ESFabout .booklistitem .bookinfo {
+    clear: left;
+    max-width: 50em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ESFabout .booklistitem .bookinfo .buttons,
+.ESFabout .booklistitem .bookinfo .button {
+    float: none;
+    display: inline-block;
+}
+
+/* ESF User Story */
+
+.ESFUserStory #gdcontent .row1 .colpos21 .section {
+    padding: 0 2em;
+}
+
+.speech-bubble-left,
+.speech-bubble-left + .cite {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.speech-bubble-left {
+    position: relative;
+    margin: 0 0 42px 0;
+    border: 10px solid #e7f8fc;
+    text-align: center;
+    color: #2776a6;
+    background: #e7f8fc;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+    /* creates larger curve */
+    .speech-bubble-left:before {
+        content: "";
+        background: #e7f8fc;
+        position: absolute;
+        z-index: 1;
+        bottom: -45px;
+        left: 50px;
+        width: 50px;
+        height: 70px;
+        -webkit-border-radius: 80px 80px;
+        -moz-border-radius: 80px 80px;
+        border-radius: 80px 80px;
+        display: block;
+    }
+
+    /* creates white circle to complete bubble tick */
+    .speech-bubble-left:after {
+        content: "";
+        background: white;
+        position: absolute;
+        z-index: 2;
+        bottom: -50px;
+        left: 63px;
+        width: 50px;
+        height: 40px;
+        -webkit-border-radius: 100px 70px;
+        -moz-border-radius: 100px 70px;
+        border-radius: 100px 70px;
+        display: block;
+    }
+
+.speech-bubble-left blockquote {
+    position: relative;
+    z-index: 5;
+    margin: 5%;
+    line-height: 1.5;
+    font-style: italic;
+    text-align: left;
+}
+
+.speech-bubble-left + .cite {
+    margin-left: 80px;
+}
+
+.ESFUserStory #gdcontent .header h2 {
+    line-height: 2.5em;
+}
+
+.ESFUserStory #gdcontent .row1 {
+    margin-top: 16px;
+}
+
+.ESFNewsStories > div,
+.ESFUserStory #gdcontent .logoSidebar,
+.ESFUserStory .section.userStory {
+    overflow: hidden;
+    background: #f8f8f7;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1cfcf;
+}
+
+/*.ESFNewsStories > div,*/
+.ESFUserStory .section.userStory > div {
+    width: calc(100% - 4em);
+    float: none;
+    margin: 2em 2em 9px 2em;
+}
+
+.ESFUserStory .section.userStory:first-of-type > div {
+    margin-bottom: 12px;
+}
+
+.ESFNewsStories > div + div,
+.ESFUserStory .section.userStory + .section.userStory {
+    margin-top: 16px;
+    padding-top: 0;
+}
+
+.ESFUserStory #gdcontent .row1 + .row .col > .inner {
+    padding: 0 16px;
+    margin: 8px 0;
+}
+
+.ESFUserStory #gdcontent .button {
+    float: none;
+}
+
+.ESFUserStory #gdcontent .buttons button {
+    margin: 0 auto;
+}
+
+.ESFUserStory #gdcontent .logoSidebar {
+    background: #fff;
+    border-color: #e1e1e1;
+    padding: 2em;
+}
+
+.ESFUserStory #gdcontent .logoSidebar p {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-style: italic;
+}
+
+.ESFUserStory #gdcontent .logoSidebar img {
+    margin: 0 auto;
+}
+
+.ESFNewsStories > div h3,
+.ESFNewsStories > div h4,
+.ESFUserStory .section.userStory h3,
+.ESFUserStory .section.userStory h4 {
+    font-size: 20px;
+    font-size: 2.0rem;
+    text-transform: none;
+}
+
+.ESFNewsStories > div h3,
+.ESFUserStory .section.userStory h3 {
+    color: #00649d;
+}
+
+.ESFNewsStories > div h4,
+.ESFUserStory .section.userStory h4 {
+    font-weight: normal;
+}
+
+.ESFNewsStories > div h3,
+.ESFNewsStories > div h4,
+.ESFNewsStories > div p,
+.ESFUserStory .section.userStory h3,
+.ESFUserStory .section.userStory h4,
+.ESFUserStory .section.userStory p {
+    margin: 1em;
+}
+
+/* CSF Certification */
+.CSFCert p.icon > span {
+    float: left;
+    text-align: right;
+    width: 124px;
+    margin: 0 16px 0 0;
+    color: #c1c0c0;
+}
+
+.CSFCert p.iconASC > span {
+    background-position: -531px -576px;
+}
+
+.CSFCert p.iconRpt > span {
+    background-position: -192px -576px;
+}
+
+.CSFCert p.iconExam > span {
+    background-position: -352px -576px;
+}
+
+.CSFCert p.iconChklist > span {
+    background-position: -24px -576px;
+}
 
 /* Product Cart Page */
 .product h4 {
@@ -2115,6 +2777,46 @@ span.keyCon {
     padding-bottom: 0;
 }
 
+/* share widget */
+
+#sharingMenu {
+    display: none; /* needed for script call */
+}
+
+    #sharingMenu .checkbox input,
+    #sharingMenu .checkbox span {
+        float: left;
+    }
+
+    #sharingMenu .checkbox label {
+        display: block;
+        line-height: 1.25em;
+        padding-left: 64px;
+    }
+
+.sharingMenuBox {
+    background-color: #efefef;
+    padding: 1px 16px 16px;
+    margin-top: 16px;
+}
+
+.button a.shareButton {
+    padding: 4px 16px 4px 12px;
+}
+
+.shareButtons .cancelLink {
+    text-align: center;
+    margin-top: 24px;
+}
+
+span.sharingIcon {
+    float: left;
+    display: block;
+    height: 32px;
+    width: 32px;
+    background: transparent url("/Content/images/sprite2014.png") no-repeat -226px -32px;
+}
+
 /* Pending Requests */
 .pendingSection {
     padding: 16px 0;
@@ -2290,6 +2992,459 @@ span.keyCon {
         background: #b7b7b5;
         width: 100%;
         margin: 0;
+    }
+/* sharing kendo items */
+#k-content,
+.k-content {
+    margin: 32px 0;
+    position: relative;
+    min-height: 48px;
+}
+
+.k-loading,
+.k-loading-image {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.k-loading-mask,
+.k-loading-image,
+.k-loading-text {
+    position: absolute;
+    top: -4000px;
+    left: -4000px;
+}
+
+.k-loading-image {
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-image: url('/content/kendo/Default/loading-image.gif');
+}
+
+.k-loading {
+    background-image: url('/content/kendo/Default/loading.gif');
+}
+
+.content .col.strengths > .inner {
+    border: 1px solid #b5b6b3;
+    padding: 0 16px;
+}
+
+.col.strengths .k-strengthsHdr {
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b5b6b3;
+}
+
+.col.strengths .sf-shareStatus {
+    border-top: 1px solid #b5b6b3;
+}
+
+.col.strengths .k-strengthsContent h5,
+.col.strengths .sf-shareGroup {
+    margin: 16px 0;
+}
+
+.col.strengths .k-strengthsHdr input {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.col.strengths p.item > span {
+    border: 2px solid #b5b6b3;
+    border-radius: 12px;
+    color: #9C0000;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-right: 16px;
+    text-align: center;
+    height: 24px;
+    width: 24px;
+}
+
+.col.strengths p.item > span:lang(ko-kr) {
+    margin-right: 10px !important;
+}
+
+.col.strengths p.item:lang(ko-kr) {
+    font-size: 13px; /* IE Only */
+    font-size: 1.3rem;
+    line-height: 1.8462; /* (1 * 24) / 13 = 1.84615... */
+}
+
+.sf-shareStatus p {
+    text-align: center;
+    font-weight: bold;
+}
+
+    .sf-shareStatus p.disabled {
+        color: #b5b6b3;
+    }
+
+p.strengths.item {
+    border-bottom: 1px dotted #b5b6b3;
+    padding-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+    p.strengths.item > span {
+        display: block;
+    }
+
+.k-strengthsHdr > span {
+    display: block;
+    font-weight: bold;
+    margin-right: 16px;
+}
+
+.ignoredRequestBox .k-strengthsHdr > span {
+    float: left;
+    line-height: 2;
+}
+
+.k-strengthsHdr > span + span {
+    display: inline;
+    font-weight: normal;
+}
+
+.k-strengthsHdr input {
+    background: transparent url("/Content/images/sprite2014.png") no-repeat -992px -30px;
+    border: none;
+    height: 24px;
+    width: 24px;
+}
+
+    .k-strengthsHdr input:hover {
+        background-position: -928px -30px;
+    }
+
+.k-strengthsContent {
+    margin-top: 4px;
+}
+
+    .k-strengthsContent a {
+        display: block;
+        float: left;
+        margin-right: 16px;
+    }
+
+.sf_share {
+    display: block;
+    height: 33px;
+    width: 34px;
+    background: transparent url("/Content/images/sprite2014.png") no-repeat -9999px -9999px;
+}
+
+.apIconX,
+.igIconX,
+.t5IconX,
+.a34IconX {
+    cursor: text;
+}
+
+.apIcon,
+a.btnRptOff:hover .apIcon {
+    background-position: -287px -32px;
+}
+
+a:hover .apIcon,
+.apIconX,
+.btnRptOff .apIcon {
+    background-position: -351px -32px;
+}
+
+.igIcon,
+a.btnRptOff:hover .igIcon {
+    background-position: -415px -32px;
+}
+
+a:hover .igIcon,
+.igIconX,
+.btnRptOff .igIcon {
+    background-position: -479px -32px;
+}
+
+.t5Icon,
+a.btnRptOff:hover .t5Icon {
+    background-position: -543px -32px;
+}
+
+a:hover .t5Icon,
+.t5IconX,
+.btnRptOff .t5Icon {
+    background-position: -607px -32px;
+}
+
+.a34Icon,
+a.btnRptOff:hover .a34Icon {
+    background-position: -670px -32px;
+}
+
+a:hover .a34Icon,
+.a34IconX,
+.btnRptOff .a34Icon {
+    background-position: -735px -32px;
+}
+
+
+.k-pager-numbers {
+    margin: 0;
+    padding: 0;
+    float: right;
+    height: 24px;
+}
+
+    .k-pager-numbers li {
+        float: left;
+        display: block;
+        margin: 0 0 0 16px;
+        font-size: 13px; /* IE Only */
+        font-size: 1.3rem;
+        text-align: center;
+        height: 24px;
+    }
+
+.k-link,
+.k-state-selected {
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    border: 1px solid #b5b6b3;
+    border-radius: 16px;
+    text-decoration: none;
+}
+
+    .k-link:hover,
+    .k-state-selected {
+        background-color: #efefef;
+        text-decoration: none;
+    }
+
+/* video resources */
+
+.videoIcon {
+    float: left;
+    display: block;
+    margin-right: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail {
+    height: 110px;
+    width: 145px;
+}
+
+.videoIcon a img.overlay {
+    max-width: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.videoIcon a:hover img.overlay {
+    left: 0;
+}
+
+.videoInfo > h3 {
+    margin-top: 0;
+}
+
+/* code management */
+
+    #divHeaderWrapper .col {
+        border-top: 1px solid #d5d6d2;
+        border-right: 1px solid #d5d6d2;
+        border-bottom: 1px solid #d5d6d2;
+        min-height: 214px;
+    }
+    #divHeaderWrapper .col:first-child {
+        border-left: 1px solid #d5d6d2;
+    }
+
+#divHeaderWrapper .col .label > a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+}
+
+    #divHeaderWrapper .col.active {
+        border-bottom: 3px solid;
+        border-bottom-color: #0098db;
+    }
+
+    #divHeaderWrapper .col:hover {
+        background-color: #0098db;
+        color: #ffffff;
+        border-bottom-color: #0098db;
+    }
+
+#divHeaderWrapper .label {
+    line-height: 1.15;
+}
+
+
+#divHeaderWrapper a > span {
+    display: block;
+    font-weight: normal;
+    text-transform: none;
+}
+
+#divHeaderWrapper span.num-available {
+    position: absolute;
+    bottom: 16px;
+    width: 18%;
+    width: calc(25% - 60px);
+}
+
+   .codemgr .fullwidthbtn {
+        width: 100% !important;
+        padding: 0 4px !important;
+    }
+
+#divHeaderWrapper .note {
+    font-weight: bold;
+}
+
+#divHeaderWrapper a span.floatNo {
+    display: block;
+    float: none;
+}
+
+#divHeaderWrapper .large {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
+#divHeaderWrapper .button {
+    float: none;
+}
+
+    #divHeaderWrapper .button button {
+        width: 100%;
+    }
+
+select.export-codes {
+    width: 90%;
+    margin: 3px 0;
+}
+
+.detailTable {
+    margin-top: 32px;
+}
+
+    .detailTable > thead {
+        background-color: #d5d6d2;
+        border-bottom: 1px solid #8e908f;
+    }
+
+        .detailTable > thead > tr th,
+        .detailTable > tbody > tr td {
+            padding: 4px 16px;
+        }
+
+    .detailTable h5 {
+        margin-top: 12px;
+        margin-top: 1.2rem;
+        margin-bottom: 12px;
+        margin-bottom: 1.2rem;
+    }
+
+.accParent {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d5d6d2;
+}
+
+.accChild {
+    border: 1px solid #252626;
+    background-color: #ffffff;
+    display: none;
+}
+
+.codeEmailInstructions {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+tr.accParent:hover {
+    background-color: #0098db;
+    color: #ffffff;
+    cursor: pointer;
+    cursor: hand; /* IE only */
+}
+
+tr.accParent.active,
+tr.accParent.active:hover {
+    background-color: #252626;
+    color: #ffffff;
+    border: 1px solid #252626;
+}
+
+.accChild td a.iconPDF {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background: #ffffff url("/Content/images/sprite2014.png") no-repeat -776px -702px;
+}
+
+    .accChild td a.iconPDF:hover {
+        background-position: -776px -638px;
+    }
+
+.codeEmailInstructions .callout {
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+    .codeEmailInstructions .callout span {
+        display: inline-block;
+        margin: 0 auto;
+        border: 1px solid #b5b6b3;
+        padding: 4px 16px;
+    }
+
+.detailTable > thead > tr th.nopad,
+.detailTable > tbody > tr td.nopad {
+    padding-right: 0;
+}
+
+th span.spacer {
+    width: 32px;
+    display: block;
+}
+
+.button input.iconReplaceBtn.darkBtn {
+    height: 32px;
+    min-height: 32px;
+    width: 32px;
+    min-width: 32px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border: 1px solid #422525;
+    background: #252626 url("/Content/images/sprite2014.png") no-repeat -508px -700px;
+}
+
+    .button input.iconReplaceBtn.darkBtn:hover {
+        background-color: #1b1b1b;
+    }
+
+.button input.iconReplaceBtn.editBtn {
+    background-position: -511px -764px;
+}
+
+    .button input.iconReplaceBtn.editBtn:Hover {
+        background-position: -511px -700px;
     }
 
 /* Action Planning page */
@@ -2518,7 +3673,7 @@ span.keyCon {
 
 .mobilelanding .appbuttons {
     margin-top: 24px;
-    margin-top: 2.4rem;
+    margin-top: 2.4rem,;
     text-align: center;
 }
 
@@ -2713,7 +3868,7 @@ span.keyCon {
     #navHolder {
         margin: 0;
         padding: 0;
-        float: left;
+        float: right;
     }
 
         #navHolder li {
@@ -2723,23 +3878,31 @@ span.keyCon {
         #navHolder a {
             color: #424545;
             padding: 12px 16px 12px 28px;
-            background-image: url("/public/img/sprite_v.png");
+            background-image: url("/Content/images/sprite_v.png");
             background-position: 999px 999px;
             background-repeat: no-repeat;
         }
 
-        #navHolder li.home > a {
+        #navHolder li.purchase > a {
             background-position: left 17px;
         }
 
+            .product #navHolder .purchase a,
+            #navHolder li.purchase > a:hover {
+                color: #000000;
+                background-position: left -111px;
+            }
 
-        #navHolder li.menu > a {
+        #navHolder li.redeem > a {
             background-position: left -367px;
         }
 
-        #navHolder li.report > a {
-            background-position: left -367px;
-        }
+            .redeem #navHolder .redeem a,
+            #navHolder li.redeem > a:hover {
+                color: #000000;
+                background-position: left -495px;
+            }
+
 
     /* template  -------------------------------------------------------- */
     .footer .col {
@@ -3551,7 +4714,7 @@ span.keyCon {
     }
 
     .public .seventyfive25 > .inner > .colpos21 {
-        float: right;
+        float: left;
         width: 25%;
     }
 
