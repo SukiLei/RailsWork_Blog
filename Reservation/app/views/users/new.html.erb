@@ -1,0 +1,45 @@
+
+<div id="container" class="container">
+  <div id="gdcontent" class="section content" role="main">
+
+
+      <div class="row row1">
+        <div class="inner">
+
+
+          <div class="col coll colpos20">
+            <div class="inner">
+              <div class="header">
+                <h2>Register</h2>
+                <%= @hint %>
+              </div>
+              <div class="resourcebox">
+                <%= form_for :user, url: users_path do |f| %>
+                <div class="textbox element required">
+                  <%= f.label :name %>
+                  <%= f.text_field :name %>
+                </div>
+                <div class="textbox element required">
+                  <%= f.label :password %>
+                  <%= f.password_field :password %>
+                </div>
+                <div class="button element">
+                  <div class="button">
+                    <%= f.submit "Register" %>
+                  </div>
+                </div>
+                <% end %>
+
+                <div class="floatR">
+                    <%= link_to 'Back', root_path %>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

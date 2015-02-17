@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reservation</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header role="banner" class="page">
+    <div class="row row0">
+      <div class="gridlogo gel-logo">
+        <a class="logo">
+          <span class="hiddenIR">
+            Active
+            <span>Network</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="bannerNav grid_navigation">
+      <nav id="nav-headnav" class="gel-nav-main gel-nav-collapse gel-nav-collapse-0 closed" role="navigation" aria-hidden=""false>
+        <ul class="listlevel1">
+          <% if @login_stauts %>
+            <li class="useraccount gel-nav-dropdown" aria-haspopup="true">
+              <%= link_to 'Logout', logout_path %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>
